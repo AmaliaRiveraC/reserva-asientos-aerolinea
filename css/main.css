@@ -1,0 +1,140 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px; 
+}
+
+.row:before, .row:after {
+  content: "";
+  display: table; 
+}
+.row:after {
+  clear: both; 
+}
+
+[class*="col-"] {
+  min-height: 7px;
+  padding: 12px;
+  float: left; 
+}
+
+.col-1 {
+  width: 8.33333%; 
+}
+
+.col-2 {
+  width: 16.66667%; 
+}
+
+.col-3 {
+  width: 25%; 
+}
+
+.col-4 {
+  width: 33.33333%; 
+}
+
+.col-5 {
+  width: 41.66667%; 
+}
+
+.col-6 {
+  width: 50%; 
+}
+
+.col-7 {
+  width: 58.33333%; 
+}
+
+.col-8 {
+  width: 66.66667%; 
+}
+
+.col-9 {
+  width: 75%; 
+}
+
+.col-10 {
+  width: 83.33333%; 
+}
+
+.col-11 {
+  width: 91.66667%; 
+}
+
+.col-12 {
+  width: 100%; 
+}
+
+.col-1-offset {
+  margin-left: 8.33333%; 
+}
+
+.col-2-offset {
+  margin-left: 16.66667%; 
+}
+
+.col-3-offset {
+  margin-left: 25%; 
+}
+
+.col-4-offset {
+  margin-left: 33.33333%; 
+}
+
+.col-5-offset {
+  margin-left: 41.66667%; 
+}
+
+.col-6-offset {
+  margin-left: 50%; 
+}
+
+.col-7-offset {
+  margin-left: 58.33333%; 
+}
+
+.col-8-offset {
+  margin-left: 66.66667%; 
+}
+
+.col-9-offset {
+  margin-left: 75%; 
+}
+
+.col-10-offset {
+  margin-left: 83.33333%; 
+}
+
+.col-11-offset {
+  margin-left: 91.66667%; 
+}
+
+.col-12-offset {
+  margin-left: 100%; 
+}
+
+.text-center{
+  text-align: center;
+}
+
+.container-boton {
+  display: flex;
+  align-items: center;
+}
+
+.borde {
+  border: 1px solid black;
+}
+
+.red{
+  background-color: red;
+}
