@@ -6,123 +6,134 @@
   padding: 0;
 }
 
+#first_class {
+  background: purple;
+  display: inline-block;
+}
+
+#economic_class {
+  background: blue;
+  display: inline-block;
+}
+
 .container {
   width: 100%;
   margin: 0 auto;
-  max-width: 1200px; 
+  max-width: 1200px;
 }
 
-.row:before, .row:after {
+.row:before,
+.row:after {
   content: "";
-  display: table; 
+  display: table;
 }
 .row:after {
-  clear: both; 
+  clear: both;
 }
 
 [class*="col-"] {
   min-height: 7px;
   padding: 12px;
-  float: left; 
+  float: left;
 }
 
 .col-1 {
-  width: 8.33333%; 
+  width: 8.33333%;
 }
 
 .col-2 {
-  width: 16.66667%; 
+  width: 16.66667%;
 }
 
 .col-3 {
-  width: 25%; 
+  width: 25%;
 }
 
 .col-4 {
-  width: 33.33333%; 
+  width: 33.33333%;
 }
 
 .col-5 {
-  width: 41.66667%; 
+  width: 41.66667%;
 }
 
 .col-6 {
-  width: 50%; 
+  width: 50%;
 }
 
 .col-7 {
-  width: 58.33333%; 
+  width: 58.33333%;
 }
 
 .col-8 {
-  width: 66.66667%; 
+  width: 66.66667%;
 }
 
 .col-9 {
-  width: 75%; 
+  width: 75%;
 }
 
 .col-10 {
-  width: 83.33333%; 
+  width: 83.33333%;
 }
 
 .col-11 {
-  width: 91.66667%; 
+  width: 91.66667%;
 }
 
 .col-12 {
-  width: 100%; 
+  width: 100%;
 }
 
 .col-1-offset {
-  margin-left: 8.33333%; 
+  margin-left: 8.33333%;
 }
 
 .col-2-offset {
-  margin-left: 16.66667%; 
+  margin-left: 16.66667%;
 }
 
 .col-3-offset {
-  margin-left: 25%; 
+  margin-left: 25%;
 }
 
 .col-4-offset {
-  margin-left: 33.33333%; 
+  margin-left: 33.33333%;
 }
 
 .col-5-offset {
-  margin-left: 41.66667%; 
+  margin-left: 41.66667%;
 }
 
 .col-6-offset {
-  margin-left: 50%; 
+  margin-left: 50%;
 }
 
 .col-7-offset {
-  margin-left: 58.33333%; 
+  margin-left: 58.33333%;
 }
 
 .col-8-offset {
-  margin-left: 66.66667%; 
+  margin-left: 66.66667%;
 }
 
 .col-9-offset {
-  margin-left: 75%; 
+  margin-left: 75%;
 }
 
 .col-10-offset {
-  margin-left: 83.33333%; 
+  margin-left: 83.33333%;
 }
 
 .col-11-offset {
-  margin-left: 91.66667%; 
+  margin-left: 91.66667%;
 }
 
 .col-12-offset {
-  margin-left: 100%; 
+  margin-left: 100%;
 }
 
-.text-center{
+.text-center {
   text-align: center;
 }
 
@@ -135,6 +146,6 @@
   border: 1px solid black;
 }
 
-.red{
+.red {
   background-color: red;
 }
