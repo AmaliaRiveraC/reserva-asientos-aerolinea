@@ -13,10 +13,13 @@ var airlineSeats = [
   false
 ];
 
+//contador que servirá para rastrear el número de asientos ocupados en el vuelo
+var busySeats = 0;
+
 var paintSeats = function(array) {
-  // notar el selector afuera del for.¿Cuantas veces necesitamos
-  // seleccionar el contenedor?
-  var container = document.getElementById("asientos");
+  /* notar el selector afuera del for.¿Cuantas veces necesitamos
+  seleccionar el contenedor?*/
+  var container = document.getElementById("seats");
   for (var i = 1; i <= array.length; i++) {
     // el array que llega como parametro lo usamos para pintar el DOM
     var seat = document.createElement("div");
@@ -35,7 +38,7 @@ var paintSeats = function(array) {
 };
 
 var reserve = function() {
-  var btn = document.getElementById("boton");
+  var btn = document.getElementById("btn");
   btn.addEventListener("click", chooseZone);
 };
 
@@ -61,6 +64,8 @@ var checkFirstClassZone = function() {
       airlineSeats[index] = true;
       reserveSeat(index);
       paintTicket(index, zone);
+      //Nuestro contador de rastreo de asientos ocupados incrementa cada que se reserva un lugar
+      busySeats++;
       // el break nos sirve para dejar de recorrer el arreglo
       // ya que hemos reservado, no necesitamos recorrer mas el arreglo
       break;
@@ -80,6 +85,8 @@ var checkEconomicZone = function() {
       airlineSeats[index] = true;
       reserveSeat(index);
       paintTicket(index, zone);
+      //Nuestro contador de rastreo de asientos ocupados incrementa cada que se reserva un lugar
+      busySeats++;
       // el break nos sirve para dejar de recorrer el arreglo
       // ya que hemos reservado, no necesitamos recorrer mas el arreglo
       break;
@@ -114,6 +121,13 @@ var paintTicket = function(index, zone) {
   ticketContainer.appendChild(ticket);
 };
 var reasigneEconomicZone = function(zone) {
+  //Aquí verificamos que si el contador es igual a 10 lo cual significaría que están los 10 lugares del avión ya ocupados
+	if(busySeats == 10) {
+    /*Si el contador es igual a 10 invocamos la función noSeats() que le indica al usuario que ya no hay asientos disponibles
+     y luego invoca la función nextFlight() le indica que el próximo vuelvo sale en 3 horas.*/
+    noSeats();
+		nextFlight();
+	} else {
   // si ya no hay en primera, preguntamos si quiere	económica
   var reasigne = confirm(
     "Ya no quedan lugar en zona " +
@@ -125,8 +139,16 @@ var reasigneEconomicZone = function(zone) {
   } else {
     nextFlight();
   }
+  }
 };
 var reasigneFirstClassZone = function(zone) {
+  //Aquí verificamos que si el contador es igual a 10 lo cual significaría que están los 10 lugares del avión ya ocupados
+	if(busySeats == 10) {
+    /*Si el contador es igual a 10 invocamos la función noSeats() que le indica al usuario que ya no hay asientos disponibles
+     y luego invoca la función nextFlight() le indica que el próximo vuelvo sale en 3 horas.*/
+    noSeats();
+		nextFlight();
+	} else {
   var reasigne = confirm(
     "Ya no quedan lugar en zona " +
       zone +
@@ -138,12 +160,16 @@ var reasigneFirstClassZone = function(zone) {
   } else {
     nextFlight();
   }
+  }
 };
 
 var nextFlight = function() {
   alert("Próximo vuelo sale en tres horas");
 };
 
+var noSeats = function(){
+  alert("Ya no hay asientos disponibles, lo sentimos! :(");
+};
 // pintamos los asientos por primera vez usando el arreglo de estado
 paintSeats(airlineSeats);
 // reserva agrega el los eventos on click necesarios
